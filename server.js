@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 
 const fs = require ('fs');
+const port = process.env.PORT || 3000;
 
 // Check out expressjs.com to see more about API
 var app = express();
@@ -18,7 +19,7 @@ app.set('view engine', 'hbs');
 
 //Next is used to proceed
 app.use((req, res, next) => {
-    
+
     var now = new Date().toString();
     var log = `${now}: ${req.method} ${req.url}`;
     console.log(log);
@@ -60,5 +61,5 @@ app.get("/bad", (req, res) => {
     res.send('Unable to handle request');
 });
 
-app.listen(3000);
+app.listen(port);
 
