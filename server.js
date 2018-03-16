@@ -63,3 +63,8 @@ app.get("/bad", (req, res) => {
 
 app.listen(port);
 
+app.get ("/project", (req, res) => {
+    res.render("project.hbs", {
+        pageTitle : "Project"
+    });
+});
